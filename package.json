@@ -1,0 +1,27 @@
+{
+  "name": "cursor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shailesh2909/opencursor-ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shailesh2909/opencursor-ai/issues"
+  },
+  "homepage": "https://github.com/shailesh2909/opencursor-ai#readme",
+  "dependencies": {
+    "@google/genai": "^1.44.0",
+    "child_process": "^1.0.2",
+    "readline-sync": "^1.4.10",
+    "util": "^0.12.5"
+  }
+}
