@@ -2,6 +2,9 @@ import { GoogleGenAI } from "@google/genai";
 import readlineSync from 'readline-sync';
 import { exec } from "child_process"; 
 import { promisify } from "util";
+import os from 'os';
+
+const platform = os.platform();
 
 const History = [];
 const ai = new GoogleGenAI({ apiKey: "AIzaSyDFPZaeHhE_Yqb1jAbetqoSxWUWQlU7rDI" });
@@ -62,7 +65,12 @@ async function runAgent(userProblem) {
     model: "gemini-2.5-flash",
     contents: History,
     config: {
-        systemInstruction: `You are an Website designer expert, you have to create tge website. you have access of tool which can execute terminal commands`,
+        systemInstruction: `You are an Website designer expert, you have to create tge website. you have access of tool which can execute terminal commands
+         current user operating system is : ${platform} so you have to give command according to that. you can only give one command at a time and wait for the result and then give next command. you have to complete the task in minimum number of steps possible. if you think task is already completed then just say task is completed and do not give any command.
+         What is your Job : 
+          1. Analyse user query to to see what type of website they want to build
+          2. Give them command one by one, step by step
+          3. Use avilabe tool to execute the command : exececuteCommand`,
     tools: [{
       functionDeclarations: [executeCommandDeclaration]
     }],

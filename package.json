@@ -21,6 +21,7 @@
   "dependencies": {
     "@google/genai": "^1.44.0",
     "child_process": "^1.0.2",
+    "os": "^0.1.2",
     "readline-sync": "^1.4.10",
     "util": "^0.12.5"
   }
