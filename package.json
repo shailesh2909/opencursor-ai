@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/shailesh2909/opencursor-ai/issues"
   },
@@ -21,6 +21,7 @@
   "dependencies": {
     "@google/genai": "^1.44.0",
     "child_process": "^1.0.2",
+    "dotenv": "^17.3.1",
     "os": "^0.1.2",
     "readline-sync": "^1.4.10",
     "util": "^0.12.5"

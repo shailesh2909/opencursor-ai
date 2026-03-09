@@ -7,7 +7,7 @@ import os from 'os';
 const platform = os.platform();
 
 const History = [];
-const ai = new GoogleGenAI({ apiKey: "AIzaSyDFPZaeHhE_Yqb1jAbetqoSxWUWQlU7rDI" });
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY});
 
 const asyncExec = promisify(exec);
 
@@ -130,6 +130,7 @@ async function runAgent(userProblem) {
 }
 
 async function main() {
+    console.log("Welcome to the Website Builder Agent! Ask me anything:");
     const userProblem = readlineSync.question("Ask me anything--> ");
     await runAgent(userProblem);
     main();
